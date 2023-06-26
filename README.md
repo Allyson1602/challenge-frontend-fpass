@@ -3,5 +3,7 @@ Vite
 ReactJs
 Typescript
 Styled Components
-absolute paths
-yarn
+Absolute paths
+Yarn
+Phosphor
+Figma
