@@ -13,6 +13,7 @@ export const LayoutStyled = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    gap: 125px;
     padding: 16px;
     box-sizing: border-box;
 `;
@@ -20,9 +21,13 @@ export const LayoutStyled = styled.div`
 const LayoutPage: FC<PropsWithChildren> = ({ children }) => {
     return (
         <LayoutStyled>
-            <img src={MarvelLogo} alt="Logo da Marvel" width="300px" />
+            <div style={{ height: "120px" }}>
+                <img src={MarvelLogo} alt="Logo da Marvel" width="300px" />
+            </div>
 
-            {children}
+            <div style={{ flexGrow: "1" }}>
+                {children}
+            </div>
         </LayoutStyled>
     )
 };
