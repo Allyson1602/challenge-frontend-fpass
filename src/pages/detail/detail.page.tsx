@@ -6,7 +6,6 @@ import * as dayjs from "dayjs"
 import * as isLeapYear from "dayjs/plugin/isLeapYear";
 import "dayjs/locale/pt-br";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import SimpleBar from "simplebar-react";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(isLeapYear);

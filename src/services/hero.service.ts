@@ -9,7 +9,7 @@ const heroService: IHeroService = {
     getHeroesByName: (name: string): IResponse<ICharacterDataWrapper> => {
         return api.get<ICharacterDataWrapper>("", {
             params: {
-                // name,
+                name,
             }
         });
     }
