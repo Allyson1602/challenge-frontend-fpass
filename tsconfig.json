@@ -26,5 +26,7 @@
   "paths": {
     "src/*": ["./src/*"],
     "components/*": ["./src/components/*"]
-  }
+  },
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true
 }

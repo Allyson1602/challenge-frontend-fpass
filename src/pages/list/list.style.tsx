@@ -20,7 +20,7 @@ export const ListStyled = styled.div`
     };
 `;
 
-export const ItemListStyled = styled(Link)`
+export const ItemListStyled = styled.a`
     display: flex;
     flex-direction: row;
     gap: 65px;
