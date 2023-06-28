@@ -5,7 +5,7 @@ import { TRoutes } from "../../routes";
 import heroService from "../../services/hero.service";
 import { useAppDispatch } from "../../redux/store";
 import { setListHeroes } from "../../redux/reducers/listHeroesReducer";
-import { LIST_HEROES_COOKIE } from "../../constants";
+import { LIST_HEROES_STORAGE } from "../../constants";
 
 const SearchPage: FC = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -17,7 +17,7 @@ const SearchPage: FC = () => {
 
         heroService.getHeroesByName(searchValue).then(({data}) => {
             if (data) {
-                sessionStorage.setItem(LIST_HEROES_COOKIE, JSON.stringify(data.data.results));
+                sessionStorage.setItem(LIST_HEROES_STORAGE, JSON.stringify(data.data.results));
 
                 dispatch(setListHeroes(data.data.results));
                 navigate(TRoutes.LIST);

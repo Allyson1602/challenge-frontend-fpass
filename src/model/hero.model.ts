@@ -3,18 +3,30 @@ export interface IThumbnail {
     extension: string;
 }
 
+export interface ISummary {
+    name: string;
+    resourceURI: string;
+}
+
+export interface IItemList  {
+    available: number;
+    returned: number;
+    collectionURI: string;
+    items: ISummary[];
+}
+
 export interface ICharacter {
     id: number;
     name: string;
     description: string;
-    modified: Date;
+    modified: Date | null;
     resourceURI: string;
     urls: string[];
     thumbnail: IThumbnail;
-    // comics: IComicList;
-    // stories: IStoryList;
-    // events: IEventList;
-    // series: ISeriesList;
+    comics: IItemList;
+    stories: IItemList;
+    events: IItemList;
+    series: IItemList;
 }
 
 export interface ICharacterDataContainer {

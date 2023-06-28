@@ -2,9 +2,10 @@ import { FC, PropsWithChildren, useEffect } from "react";
 import styled from "styled-components";
 import BackgroundImage from "../assets/images/background.jpg";
 import MarvelLogo from "../assets/images/logo-marvel.png";
-import { LIST_HEROES_COOKIE } from "../constants";
+import { HERO_STORAGE, LIST_HEROES_STORAGE } from "../constants";
 import { setListHeroes } from "../redux/reducers/listHeroesReducer";
 import { useAppDispatch } from "../redux/store";
+import { setHero } from "../redux/reducers/heroReducer";
 
 export const LayoutStyled = styled.div`
     width: 100vw;
@@ -16,7 +17,7 @@ export const LayoutStyled = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 125px;
+    gap: 40px;
     padding: 16px;
     box-sizing: border-box;
 `;
@@ -25,10 +26,15 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        const listHeroesStorage = sessionStorage.getItem(LIST_HEROES_COOKIE);
+        const listHeroesStorage = sessionStorage.getItem(LIST_HEROES_STORAGE);
+        const heroStorage = sessionStorage.getItem(HERO_STORAGE);
         
         if (listHeroesStorage) {
             dispatch(setListHeroes(JSON.parse(listHeroesStorage)));
+        }
+        
+        if (heroStorage) {
+            dispatch(setHero(JSON.parse(heroStorage)));
         }
     }, []);
 

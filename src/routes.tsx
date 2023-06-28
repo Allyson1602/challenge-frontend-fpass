@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import SearchPage from "./pages/search/search.page";
 import Layout from "./pages/layout";
 import ListPage from "./pages/list/list.page";
+import DetailPage from "./pages/detail/detail.page";
 
 export enum TRoutes {
     SEARCH = "/",
     LIST = "/list",
-    SELECTED = "/selected",
+    DETAIL = "/detail",
 }
 
 const AppRoutes: FC = () => (
@@ -28,10 +29,10 @@ const AppRoutes: FC = () => (
                     element={<ListPage />}
                 />
 
-                {/* <Route
-                    path={TRoutes.SELECTED}
-                    element={<SelectedPage />}
-                /> */}
+                <Route
+                    path={TRoutes.DETAIL}
+                    element={<DetailPage />}
+                />
             </Route>
         </Routes>
     </BrowserRouter>
