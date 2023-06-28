@@ -9,3 +9,4 @@ Phosphor
 Figma
 Variáveis de ambiente
 Redux
+sessionStorage (lista de hérois)

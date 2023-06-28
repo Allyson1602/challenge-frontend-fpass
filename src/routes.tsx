@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import SearchPage from "./pages/search/search.page";
-import LayoutPage from "./pages/layout";
+import Layout from "./pages/layout";
+import ListPage from "./pages/list/list.page";
 
 export enum TRoutes {
-    SEARCH = "/search",
+    SEARCH = "/",
     LIST = "/list",
     SELECTED = "/selected",
 }
@@ -15,17 +16,17 @@ const AppRoutes: FC = () => (
             <Route
                 path="/"
                 element={
-                    <LayoutPage>
+                    <Layout>
                         <Outlet />
-                    </LayoutPage>
+                    </Layout>
                 }
             >
                 <Route index element={<SearchPage />} />
 
-                {/* <Route
+                <Route
                     path={TRoutes.LIST}
                     element={<ListPage />}
-                /> */}
+                />
 
                 {/* <Route
                     path={TRoutes.SELECTED}
