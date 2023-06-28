@@ -1,24 +1,26 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { IHeroModel } from "../../model/hero.model";
+import { ICharacter } from "../../model/hero.model";
 
 export interface ListHeroesState {
-    value: IHeroModel[];
+    heroes: ICharacter[];
 }
 
 const initialState: ListHeroesState = {
-    value: []
+    heroes: []
 }
 
 export const listHeroesSlice = createSlice({
     name: "listHeroes",
     initialState,
     reducers: {
-        setListHeroes: (state, action: PayloadAction<IHeroModel[]>) => {
-            state.value = {
-                ...state.value,
+        setListHeroes: (state, action: PayloadAction<ICharacter[]>) => {
+            state.heroes = [
+                ...state.heroes,
                 ...action.payload
-            };
+            ];
+
+            return state;
         }
     }
 });

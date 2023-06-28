@@ -1,0 +1,1 @@
+export const LIST_HEROES_COOKIE = "listHeroes";

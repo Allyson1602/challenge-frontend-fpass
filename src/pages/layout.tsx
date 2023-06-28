@@ -1,7 +1,10 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useEffect } from "react";
 import styled from "styled-components";
 import BackgroundImage from "../assets/images/background.jpg";
 import MarvelLogo from "../assets/images/logo-marvel.png";
+import { LIST_HEROES_COOKIE } from "../constants";
+import { setListHeroes } from "../redux/reducers/listHeroesReducer";
+import { useAppDispatch } from "../redux/store";
 
 export const LayoutStyled = styled.div`
     width: 100vw;
@@ -18,7 +21,17 @@ export const LayoutStyled = styled.div`
     box-sizing: border-box;
 `;
 
-const LayoutPage: FC<PropsWithChildren> = ({ children }) => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        const listHeroesStorage = sessionStorage.getItem(LIST_HEROES_COOKIE);
+        
+        if (listHeroesStorage) {
+            dispatch(setListHeroes(JSON.parse(listHeroesStorage)));
+        }
+    }, []);
+
     return (
         <LayoutStyled>
             <div style={{ height: "120px" }}>
@@ -32,4 +45,4 @@ const LayoutPage: FC<PropsWithChildren> = ({ children }) => {
     )
 };
 
-export default LayoutPage;
+export default Layout;
