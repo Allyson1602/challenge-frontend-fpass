@@ -6,6 +6,7 @@ import * as dayjs from "dayjs"
 import * as isLeapYear from "dayjs/plugin/isLeapYear";
 import "dayjs/locale/pt-br";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import SimpleBar from "simplebar-react";
 
 dayjs.extend(localizedFormat);
 dayjs.extend(isLeapYear);
@@ -22,27 +23,23 @@ const DetailPage: FC = () => {
     const { hero } = useAppSelector(state => state.hero);
     const [currentTab, setCurrentTab] = useState<ETab>(ETab.COMICS);
 
-    console.log(hero);
-
     const getContentAba = (): JSX.Element => {
         const content = hero[currentTab];
 
         return (
-            <div>
-                {content.items.length > 0 ? (
-                    <ul>
-                        {content.items.map(item => (
-                            <li>
-                                <a href={item.resourceURI}>{item.name}</a>
-                            </li>
-                        ))}
-                    </ul>
+            <ContentAbasStyled>
+                {content.items?.length > 0 ? (
+                        <ol className="content-aba__list">
+                            {content.items?.map((item, index) => (
+                                <li key={index} className="content-aba__item-list">
+                                    <a className="content-aba__link" href="#">{item.name}</a>
+                                </li>
+                            ))}
+                        </ol>
                 ) : (
-                    <p></p>
+                    <p>Herói não possui '{currentTab}'</p>
                 )}
-
-                <a href={content.collectionURI}>ver mais</a>
-            </div>
+            </ContentAbasStyled>
         );
     };
 
@@ -113,9 +110,7 @@ const DetailPage: FC = () => {
                     >Série</button>
                 </HeaderAbasStyled>
 
-                <ContentAbasStyled>
-                    {getContentAba()}
-                </ContentAbasStyled>
+                {getContentAba()}
             </BoxAbasStyled>
         </DetailStyled>
     )

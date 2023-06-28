@@ -3,16 +3,30 @@ import styled from "styled-components";
 
 export const DetailStyled = styled.div`
     width: 80vw;
-    height: 90%;
+    height: 70vh;
     background-color: #00000080;
     border: 3px solid #E12326;
     border-radius: 9px;
     box-sizing: border-box;
-    padding: 50px;
+    padding: 30px 50px;
+    overflow: auto;
 
     & p {
         color: #FFF;
-    }
+    };
+
+    &::-webkit-scrollbar {
+        width: 7px;
+    };
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    };
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ffffff44;
+        border-radius: 3px;
+    };
 `;
 
 export const InfoDetailStyled = styled.div`
@@ -112,4 +126,17 @@ export const HeaderAbasStyled = styled.div`
 
 export const ContentAbasStyled = styled.div`
 
+    & .content-aba__item-list {
+        color: #ffffffd6;
+        cursor: pointer;
+
+        &:hover, &:hover a {
+            color: #b5171f;
+        };
+    };
+
+    & .content-aba__link {
+        text-decoration: none;
+        color: #ffffffd6;
+    }
 `;

@@ -17,7 +17,7 @@ export const LayoutStyled = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 125px;
+    gap: 40px;
     padding: 16px;
     box-sizing: border-box;
 `;

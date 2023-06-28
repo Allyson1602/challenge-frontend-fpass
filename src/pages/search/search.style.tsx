@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SearchStyled = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 120px;
 `;
 
 export const SearchFieldStyled = styled.div`
