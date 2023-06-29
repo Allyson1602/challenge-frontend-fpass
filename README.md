@@ -9,5 +9,4 @@ Phosphor
 Figma
 Variáveis de ambiente
 Redux
-SimpleBarReact
 sessionStorage (lista de hérois)

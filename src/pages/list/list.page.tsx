@@ -1,9 +1,7 @@
 import { FC} from "react";
-import { GoBackStyled, InfoItemStyled, ItemListStyled, ListStyled } from "./list.style";
+import { BoxItemListStyled, GoBackStyled, InfoItemStyled, ItemListStyled, ListStyled } from "./list.style";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { TRoutes } from "../../routes";
-import SimpleBar from "simplebar-react";
-import "simplebar-react/dist/simplebar.min.css";
 import { ICharacter } from "../../model/hero.model";
 import { useNavigate } from "react-router-dom";
 import { setHero } from "../../redux/reducers/heroReducer";
@@ -27,7 +25,7 @@ const ListPage: FC = () => {
         <ListStyled>
             <GoBackStyled to={TRoutes.SEARCH}>voltar</GoBackStyled>
 
-            <SimpleBar style={{ maxHeight: "calc(100vh - 210px)" }}>
+            <BoxItemListStyled>
                 {listHeroes?.map((hero, index) => (
                     <ItemListStyled key={index} onClick={() => handleClickHero(hero)}>
                         <div>
@@ -40,7 +38,7 @@ const ListPage: FC = () => {
                         </InfoItemStyled>
                     </ItemListStyled>
                 ))}
-            </SimpleBar>
+            </BoxItemListStyled>
         </ListStyled>
     )
 };

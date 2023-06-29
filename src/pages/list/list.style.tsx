@@ -10,13 +10,23 @@ export const ListStyled = styled.div`
     right: 0;
     padding: 0 10%;
     box-sizing: border-box;
+`;
 
-    & .simplebar-scrollbar {
-        height: 90px !important;
-        
-        &::before {
-            background: #E12326;
-        };
+export const BoxItemListStyled = styled.div`
+    max-height: calc(100vh - 210px);
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 7px;
+    };
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    };
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ffffff44;
+        border-radius: 3px;
     };
 `;
 
