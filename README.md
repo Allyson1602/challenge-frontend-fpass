@@ -1,45 +1,59 @@
-# Desafio Frontend Fpass
 
-O Fpass é uma startup que oferece uma plataforma de Lifelong Learning focada em Educação Corporativa e Educação Formal. Nossa missão é ajudar as pessoas a liberarem seu potencial humano, tornando-as mais produtivas, eficientes e abertas à multidisciplinaridade. Através da nossa plataforma, oferecemos recursos e ferramentas educacionais para um aprendizado contínuo ao longo da vida. Queremos capacitar os indivíduos a adquirirem novos conhecimentos e habilidades, impulsionando seu crescimento pessoal e profissional.
+# Challenge Frontend Fpass
 
-Trabalhamos com tecnologias e arquiteturas de última geração para atender à evolução do mercado e do produto:
+O sistema foi projetado para permitir a busca, listagem e exibição detalhada de heróis da Marvel, utilizando a API fornecida pela Marvel.
 
-* Práticas ágeis como Kanban / Scrum / Agile.
-* GCP (Google Cloud Platform).
-* Escalabilidade.
-* Micro services e aplicações como serviços.
-* Docker.
-* Git.
-* GitHub.
-* NestJS/NodeJS.
-* ReactJS/React Native.
-* Material Design.
-* BDD.
-* Aplicação multi-plataformas.
 
-## Desafio
-Crie uma aplicação utilizando a API da Marvel para que pesquise/liste os heróis pelo nome
+## Apêndice
 
-Portal para desenvolvedores da Marvel: [Marvel for Developers](https://developer.marvel.com/)
+O sistema é composto por três páginas distintas: "Search" (busca), "List" (lista) e "Detail" (detalhes), cada uma com funcionalidades específicas. Nas duas últimas páginas, há um botão que permite voltar para a página anterior.
 
-Espera-se do candidato uma aplicação de 3 telas, no qual deve conter:
+Na página de busca, é possível listar os heróis encontrados apenas se houver correspondência com pelo menos um herói. Caso contrário, permanece na mesma página exibindo uma mensagem informativa.
 
-1) Uma pesquisa pelo nome ou parte do nome do herói.
-2) Listagem do herói com sua thumbnail.
-3) Página com informações sobre o herói selecionado (descrição).
+Na página de listagem, todos os heróis encontrados são exibidos, juntamente com sua imagem, nome e descrição. Cada herói é apresentado como um link que redireciona para a página de detalhes específicos desse herói.
 
-Espera-se também que o candidato gere um arquivo ***READ.md*** ao fim do desafio, explicando as tecnologias utilizadas, a
-arquitetura escolhida (se for o caso) e como executar seu projeto.
+Na página de detalhes do herói, são exibidos detalhes adicionais, incluindo sua imagem, nome, ID, data da última modificação, descrição e os títulos dos Comics, Histórias, Eventos e Séries relacionados ao herói.
 
-_A possibilidade de hospedar o projeto em serviços como o [heroku](https://www.heroku.com/) ou [Vercel](https://vercel.com) será bem vista mas não é obrigatória_
+Essa estrutura permite ao usuário pesquisar por heróis, listar os resultados encontrados e obter informações detalhadas sobre cada herói específico. Os botões de retorno proporcionam uma experiência de navegação intuitiva ao permitir que o usuário retorne à página anterior facilmente.
 
-Qualquer outra funcionalidade extra é bem vindo.
 
-## Tecnologias para completar o desafio
-Devem ser utilizado as seguintes tecnologias e padrões:
-* Styled components
-* React
-* TypeScript
+## Funcionalidades
 
-## Boa sorte
-Caso tenha quaisquer dúvidas, entrar em contato com edy.rodrigues@fpass.com.br
+- Busca de herói
+- Listagem de heróis
+- Detalhamento do herói
+
+
+## Tecnologias utilizadas
+
+- Yarn
+- Vite
+- ReactJs
+- Typescript
+- Styled Components
+- Phosphor Icon
+- Figma
+- Variáveis de ambiente
+- Redux
+- sessionStorage (lista de hérois)
+## Referência
+
+ - [Portal para desenvolvedores da Marvel](https://developer.marvel.com/)
+
+
+## Autor
+
+- [@Allyson1602](https://github.com/Allyson1602)
+
+
+## Screenshots
+
+Templates utilizados para a montagem do sistema.
+Criados no figma.
+
+![App Screenshot](https://i.imgur.com/g9o0wzu.png)
+
+![App Screenshot](https://i.imgur.com/wU9uIcM.png)
+
+![App Screenshot](https://i.imgur.com/blAPhH0.png)
+
