@@ -8,6 +8,7 @@ import { useAppDispatch } from "../redux/store";
 import { setHero } from "../redux/reducers/heroReducer";
 
 export const LayoutStyled = styled.div`
+    min-width: 600px;
     width: 100vw;
     height: 100vh;
     background-image:  linear-gradient(to top, #000000BB, #000000F8, #000000BB), url(${BackgroundImage});

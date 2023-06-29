@@ -28,9 +28,7 @@ const ListPage: FC = () => {
             <BoxItemListStyled>
                 {listHeroes?.map((hero, index) => (
                     <ItemListStyled key={index} onClick={() => handleClickHero(hero)}>
-                        <div>
-                            <img src={hero.thumbnail.path+"."+hero.thumbnail.extension} alt={hero.name} width="170px" />
-                        </div>
+                        <img src={hero.thumbnail.path+"."+hero.thumbnail.extension} alt={hero.name} width="170px" />
 
                         <InfoItemStyled>
                             <p className="info__name">{hero.name}</p>

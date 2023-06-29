@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const SearchStyled = styled.div`
+    min-width: 600px;
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 120px;
 `;
@@ -10,6 +12,7 @@ export const SearchFieldStyled = styled.div`
     height: 70px;
     position: relative;
     display: flex;
+    flex-grow: 1;
     justify-content: center;
 
     &:hover {
@@ -39,9 +42,10 @@ export const InputSearchStyled = styled.input`
     border: 4px solid #ff0c18;
     font-size: 30px;
     border-radius: 30px;
-    width: 50vw;
+    width: 50%;
     color: #FFF;
     outline: none;
+    flex-grow: 1;
 `;
 
 export const ButtonSearchStyled = styled.button`
