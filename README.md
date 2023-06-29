@@ -24,6 +24,37 @@ Essa estrutura permite ao usuário pesquisar por heróis, listar os resultados e
 - Detalhamento do herói
 
 
+## Rodando localmente
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/Allyson1602/challenge-frontend-fpass.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd challenge-frontend-fpass
+```
+
+Instale as dependências
+
+```bash
+  npm install
+  ou
+  yarn install
+```
+
+Inicie o servidor
+
+```bash
+  npm run dev
+  ou
+  yarn dev
+```
+
+
 ## Tecnologias utilizadas
 
 - Yarn
