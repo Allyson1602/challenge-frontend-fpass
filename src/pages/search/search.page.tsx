@@ -17,9 +17,11 @@ const SearchPage: FC = () => {
 
         heroService.getHeroesByName(searchValue).then(({data}) => {
             if (data) {
-                sessionStorage.setItem(LIST_HEROES_STORAGE, JSON.stringify(data.data.results));
+                if (!sessionStorage.getItem(LIST_HEROES_STORAGE)){
+                    sessionStorage.setItem(LIST_HEROES_STORAGE, JSON.stringify(data.data.results));
+                    dispatch(setListHeroes(data.data.results));
+                }
 
-                dispatch(setListHeroes(data.data.results));
                 navigate(TRoutes.LIST);
             }
         });
