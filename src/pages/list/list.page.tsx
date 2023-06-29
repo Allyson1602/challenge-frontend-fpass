@@ -13,9 +13,7 @@ const ListPage: FC = () => {
     const navigate = useNavigate();
 
     const handleClickHero = (hero: ICharacter) => {
-        if (!sessionStorage.getItem(HERO_STORAGE)){
-            sessionStorage.setItem(HERO_STORAGE, JSON.stringify(hero));
-        }
+        sessionStorage.setItem(HERO_STORAGE, JSON.stringify(hero));
 
         dispatch(setHero(hero));
         navigate(TRoutes.DETAIL);

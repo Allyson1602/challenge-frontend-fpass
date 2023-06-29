@@ -4,11 +4,17 @@ export const SearchStyled = styled.div`
     min-width: 600px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     margin-top: 120px;
+    
+    & .search__message {
+        color: #ffffff7d;
+    };
 `;
 
 export const SearchFieldStyled = styled.div`
+    width: 100%;
     height: 70px;
     position: relative;
     display: flex;

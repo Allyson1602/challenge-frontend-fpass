@@ -9,6 +9,7 @@ import { LIST_HEROES_STORAGE } from "../../constants";
 
 const SearchPage: FC = () => {
     const [searchValue, setSearchValue] = useState("");
+    const [message, setMessage] = useState("");
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
@@ -16,14 +17,26 @@ const SearchPage: FC = () => {
         if (searchValue === "") return;
 
         heroService.getHeroesByName(searchValue).then(({data}) => {
-            if (data) {
-                if (!sessionStorage.getItem(LIST_HEROES_STORAGE)){
-                    sessionStorage.setItem(LIST_HEROES_STORAGE, JSON.stringify(data.data.results));
-                    dispatch(setListHeroes(data.data.results));
-                }
+            if (data.data.count > 0) {
+                sessionStorage.setItem(LIST_HEROES_STORAGE, JSON.stringify(data.data.results));
+                dispatch(setListHeroes(data.data.results));
 
                 navigate(TRoutes.LIST);
+            }else {
+                if (sessionStorage.getItem(LIST_HEROES_STORAGE)){
+                    sessionStorage.removeItem(LIST_HEROES_STORAGE);
+                    dispatch(setListHeroes([]));
+                }
+
+                setMessage("Não encontrado");
             }
+        }).catch(() => {
+            if (sessionStorage.getItem(LIST_HEROES_STORAGE)){
+                sessionStorage.removeItem(LIST_HEROES_STORAGE);
+                dispatch(setListHeroes([]));
+            }
+
+            setMessage("Não encontrado");
         });
     };
 
@@ -51,6 +64,8 @@ const SearchPage: FC = () => {
 
                 <ButtonSearchStyled onClick={handleClickSearch}>buscar</ButtonSearchStyled>
             </SearchFieldStyled>
+
+            {message && <p className="search__message">{message}</p>}
         </SearchStyled>
     )
 };
