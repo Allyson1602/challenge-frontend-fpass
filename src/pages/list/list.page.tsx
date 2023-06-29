@@ -13,9 +13,7 @@ const ListPage: FC = () => {
     const navigate = useNavigate();
 
     const handleClickHero = (hero: ICharacter) => {
-        if (!sessionStorage.getItem(HERO_STORAGE)){
-            sessionStorage.setItem(HERO_STORAGE, JSON.stringify(hero));
-        }
+        sessionStorage.setItem(HERO_STORAGE, JSON.stringify(hero));
 
         dispatch(setHero(hero));
         navigate(TRoutes.DETAIL);
@@ -28,9 +26,7 @@ const ListPage: FC = () => {
             <BoxItemListStyled>
                 {listHeroes?.map((hero, index) => (
                     <ItemListStyled key={index} onClick={() => handleClickHero(hero)}>
-                        <div>
-                            <img src={hero.thumbnail.path+"."+hero.thumbnail.extension} alt={hero.name} width="170px" />
-                        </div>
+                        <img src={hero.thumbnail.path+"."+hero.thumbnail.extension} alt={hero.name} width="170px" />
 
                         <InfoItemStyled>
                             <p className="info__name">{hero.name}</p>
