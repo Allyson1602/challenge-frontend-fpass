@@ -2,10 +2,6 @@ import { FC, useState } from "react";
 import { BoxAbasStyled, BoxModifiedStyled, BoxNameStyled, ContentAbasStyled, DetailStyled, GoBackStyled, HeaderAbasStyled, HeaderInfoStyled, InfoDetailStyled } from "./detail.style";
 import { useAppSelector } from "../../redux/store";
 import { TRoutes } from "../../routes";
-import * as dayjs from "dayjs"
-import * as isLeapYear from "dayjs/plugin/isLeapYear";
-
-dayjs.extend(isLeapYear);
 
 export enum ETab {
     COMICS = "comics",
@@ -60,7 +56,6 @@ const DetailPage: FC = () => {
                         
                         <BoxModifiedStyled>
                             <p className="info__modified-title">Última modificação</p>
-                            <p>{dayjs(hero.modified).format("L")}</p>
                         </BoxModifiedStyled>
                     </HeaderInfoStyled>
 
