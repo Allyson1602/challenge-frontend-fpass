@@ -15,10 +15,7 @@ export const listHeroesSlice = createSlice({
     initialState,
     reducers: {
         setListHeroes: (state, action: PayloadAction<ICharacter[]>) => {
-            state.heroes = [
-                ...state.heroes,
-                ...action.payload
-            ];
+            state.heroes = action.payload;
 
             return state;
         }
