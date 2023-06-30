@@ -52,6 +52,10 @@ export const InputSearchStyled = styled.input`
     color: #FFF;
     outline: none;
     flex-grow: 1;
+
+    &::placeholder {
+        font-size: 20px;
+    }
 `;
 
 export const ButtonSearchStyled = styled.button`
