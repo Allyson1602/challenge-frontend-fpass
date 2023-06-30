@@ -57,7 +57,7 @@ const SearchPage: FC = () => {
 
                 <InputSearchStyled
                     id="inputSearch"
-                    placeholder="Digite o nome do herói"
+                    placeholder="Ex.: Iron Man, Captain America, Thor, Hulk"
                     value={searchValue}
                     onChange={handleChangeSearch}
                 />
